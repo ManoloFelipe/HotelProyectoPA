@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia a tu rama principal si es diferente (ej: master)
+      - main  
 
 jobs:
   build:
@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Permite el acceso completo al historial de la rama
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -26,9 +28,13 @@ jobs:
 
     - name: Verify Build Directory
       run: ls dist/HotelProyectoPA 
-      
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  # Rama de despliegue
         folder: dist/HotelProyectoPA
+        clean: true  # Limpia el contenido anterior antes de desplegar
+        token: ${{ secrets.GITHUB_TOKEN }}
+        silent: false
+        debug: true
