@@ -22,10 +22,10 @@ jobs:
       run: npm install
 
     - name: Build Angular Project
-      run: npm run build -- --output-path=dist --base-href="/mi-proyecto/"
+      run: npm run build -- --output-path=dist --base-href="/HotelProyectoPA/"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  # Rama de despliegue
-        folder: dist/mi-proyecto
+        folder: dist/HotelProyectoPA
