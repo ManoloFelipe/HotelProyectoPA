@@ -1,3 +1,45 @@
+/*Color Marca*/
+.bg-dark {
+  background-color: #031322 !important;
+}
+
+.text-brand {
+  color: #D3A34B !important;
+}
+
+h5,
+p,
+label,
+.text-brand-dark {
+  color: #031322 !important;
+}
+.navbar-brand {
+  color: #D3A34B !important;
+}
+
+.btn-brand {
+  background-color: #D3A34B;
+  color: #031322;
+  border: none;
+}
+.bg-brand,
+.btn-brand:hover {
+  background-color: #b88d3d;
+}
+
+.text-hero-contrast {
+  color: #031322 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* sombra oscura */
+  font-family: 'Playfair Display', serif; 
+  font-weight: 600;
+}
+
+.text-hero-sub {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
 /* Scroll suave para anclas */
 html {
   scroll-behavior: smooth;
@@ -14,4 +56,37 @@ img {
 }
 img:hover {
   transform: scale(1.05);
+}
+
+
+/* Boton de inicio */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #031322;
+  color: #D3A34B;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  text-decoration: none;
+  font-size: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
 }
