@@ -1,0 +1,17 @@
+/* Scroll suave para anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evitar que secciones queden ocultas detrás del header fijo */
+section {
+  scroll-margin-top: 70px; /* ajusta este valor según la altura del header */
+}
+
+/* Efecto hover suave en imágenes */
+img {
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
