@@ -43,4 +43,7 @@
 .room-img:hover {
   transform: scale(1.05);
 }
+.carousel-item {
+  transition: transform 0.6s ease-in-out !important;
+}
 
