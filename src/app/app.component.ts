@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -8,6 +8,9 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceComponent } from './service/service.component';
+import { BuscadorFechasComponent } from './buscador-fechas/buscador-fechas.component';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-root',
@@ -21,13 +24,25 @@ import { ServiceComponent } from './service/service.component';
     RoomsComponent,
     ServiceComponent,
     TestimonialsComponent,
-    RouterOutlet
+    RouterOutlet,
+    BuscadorFechasComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Hotel DiamondDen';
+
+  
+  mensajeToast: string = '';
+
+  @ViewChild('toastElement', { static: false }) toastElement!: ElementRef;
+
+  mostrarToast(mensaje: string) {
+    this.mensajeToast = mensaje;
+    const toast = new bootstrap.Toast(this.toastElement.nativeElement);
+    toast.show();
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

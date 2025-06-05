@@ -1,0 +1,24 @@
+.galeria-img-wrapper {
+  height: 250px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.galeria-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.galeria-img-wrapper:hover img {
+  transform: scale(1.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}

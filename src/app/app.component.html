@@ -4,8 +4,28 @@
 <app-service></app-service>
 <app-gallery></app-gallery>
 <app-testimonials></app-testimonials>
-<app-contact></app-contact>
+<app-buscador-fechas (mensajeEnviado)="mostrarToast($event)"></app-buscador-fechas>
+<app-contact (mensajeEnviado)="mostrarToast($event)"></app-contact>
 <app-footer></app-footer>
 <a href="#inicio" id="backToTop" class="back-to-top">
   <i class="fas fa-chevron-up"></i>
 </a>
+
+
+<!-- Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div 
+    class="toast align-items-center text-white bg-success border-0"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    #toastElement
+  >
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ mensajeToast }}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>

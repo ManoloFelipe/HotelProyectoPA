@@ -9,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
+imagenes = [
+  { src: 'assets/gallery/tikal.webp', alt: 'Tikal' },
+  { src: 'assets/gallery/antigua.webp', alt: 'Antigua' },
+  { src: 'assets/gallery/volcan.webp', alt: 'Volcán' },
+  { src: 'assets/gallery/barrilete.webp', alt: 'Barrilete' },
+  { src: 'assets/gallery/lago.webp', alt: 'Lago' },
+];
 
 }

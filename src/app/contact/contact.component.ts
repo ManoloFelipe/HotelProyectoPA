@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -9,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-
+    
+  @Output() mensajeEnviado = new EventEmitter<string>();
+  enviarSolicitud() {
+    this.mensajeEnviado.emit('¡Hemos recibido tu mensaje, pronto nos contactaremos contigo!');
+  }
 }
