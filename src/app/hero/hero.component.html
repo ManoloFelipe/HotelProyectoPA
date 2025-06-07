@@ -3,6 +3,31 @@
     <img src="assets/DiamondDen.svg" alt="Logo Hotel" width="175" height="175" class="mb-4 logo-fade">
     <h1 class="display-4 text-hero-contrast mb-3">Más que un Hotel. Un Tesoro Escondido.</h1>
     <p class="lead text-hero-sub text-brand mb-4">Bienvenido a Hotel DiamondDen</p>
-    <a href="#contacto" class="btn btn-brand btn-lg">Reserva ahora</a>
+<button type="button" class="btn btn-lg btn-brand" data-bs-toggle="modal" data-bs-target="#pdfModal">
+  Ver PDF
+</button>
+
   </div>
 </section>
+
+
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">Proyecto Final Proceso Administrativo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="height: 80vh;">
+        <iframe
+          [src]="pdfUrl"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border: none;"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
